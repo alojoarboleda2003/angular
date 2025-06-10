@@ -16,7 +16,7 @@ export interface EstadoCantidad {
   providedIn: 'root'
 })
 export class ChartDataService {
-  private apiUrl = 'http://localhost/hermes_angular/getEstadoCounts.php';
+  private apiUrl = 'http://localhost/inventario-api/getEstadoCounts.php';
 
   constructor(private http: HttpClient) {}
 
