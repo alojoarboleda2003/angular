@@ -1,8 +1,7 @@
-<div class="container">
-    <div id="chart-container">
-
-    </div>
-    <div id="legend">
-
-    </div>
+<div style="max-width: 700px; margin: 30px auto;">
+  <canvas baseChart
+    [type]="barChartType"
+    [data]="barChartData"
+    [options]="barChartOptions">
+  </canvas>
 </div>
