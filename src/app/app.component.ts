@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hermes_angular';
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> f3db99084e1341024ef87d2cc7158287917e6f43
+
+

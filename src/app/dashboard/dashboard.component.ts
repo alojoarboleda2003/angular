@@ -20,31 +20,81 @@ export class DashboardComponent implements OnInit {
     ]
   };
 
-  
 
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
-    responsive: true,
-    scales: {
-      x: {},
-      y: {
-        beginAtZero: true
+
+ public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: true,
+      position: 'top',
+      labels: {
+        color: '#222', // color del texto de la leyenda
+        font: {
+          size: 14,
+          weight: 'bold',
+          family: 'Poppins, sans-serif'
+        }
       }
     },
-    plugins: {
-      legend: {
-        display: true
+    tooltip: {
+      backgroundColor: '#ffffff',
+      titleColor: '#000',
+      bodyColor: '#333',
+      borderColor: '#ccc',
+      borderWidth: 1,
+      titleFont: {
+        size: 14,
+        weight: 'bold',
+        family: 'Poppins, sans-serif'
+      },
+      bodyFont: {
+        size: 12,
+        family: 'Poppins, sans-serif'
       }
     }
-  };
+  },
+  scales: {
+    x: {
+      grid: {
+        color: '#e0e0e0'
+      },
+      ticks: {
+        color: '#222', // color de las categorías
+        font: {
+          size: 13,
+          family: 'Poppins, sans-serif',
+          weight: 500
+        }
+      }
+    },
+    y: {
+      grid: {
+        color: '#e0e0e0'
+      },
+      beginAtZero: true,
+      ticks: {
+        color: '#333', // color de los números
+        font: {
+          size: 12,
+          family: 'Poppins, sans-serif',
+          weight: 500
+        }
+      }
+    }
+  }
+};
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get<any[]>('http://localhost/hermes_angular/getEstadoCounts.php')
       .subscribe(data => {
         setTimeout(() => {
-  this.barChartData = { ...this.barChartData };
-});
+          this.barChartData = { ...this.barChartData };
+        });
 
         console.log('📊 Datos recibidos:', data);
 
@@ -57,8 +107,6 @@ export class DashboardComponent implements OnInit {
         }
       });
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> f3db99084e1341024ef87d2cc7158287917e6f43
+

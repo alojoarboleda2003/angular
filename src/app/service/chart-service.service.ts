@@ -32,8 +32,7 @@ export class ChartDataService {
       )
     );
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> f3db99084e1341024ef87d2cc7158287917e6f43
+
+
