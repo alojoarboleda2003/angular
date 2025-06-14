@@ -16,7 +16,6 @@ interface EstadoCantidad {
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-
 })
 export class DashboardComponent implements AfterViewInit, OnInit {
   private chart!: IChartApi;
@@ -84,7 +83,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
       lineWidth: 2,
     };
 
-    //this.areaSeries = this.chart.addAreaSeries(areaOptions);
+    this.areaSeries = this.chart.addAreaSeries(areaOptions);
 
     const datosValidos = this.datosDesdeBD.filter(item =>
       item && item.time && typeof item.value === 'number'
