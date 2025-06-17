@@ -1,0 +1,69 @@
+    .dashboard-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .dashboard-header h2 {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .total-card {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid #3498db;
+        min-width: 250px;
+    }
+    
+    .total-label {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 5px;
+    }
+    
+    .total-value {
+        color: #2c3e50;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 10px 0;
+    }
+    
+    .total-description {
+        display: flex;
+        align-items: center;
+        color: #95a5a6;
+        font-size: 0.85rem;
+    }
+    
+    .total-description i {
+        margin-right: 8px;
+        color: #3498db;
+    }
+    
+    .chart-container {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        height: 450px;
+        position: relative;
+    }
