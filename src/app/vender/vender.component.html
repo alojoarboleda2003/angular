@@ -1,1 +1,50 @@
-<p>vender works!</p>
+<div class="container mt-4">
+  <h2>Vender Productos</h2>
+
+  <form (ngSubmit)="agregarProducto()" #ventaForm="ngForm">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="producto" class="form-label">Producto</label>
+        <select id="producto" class="form-select" [(ngModel)]="productoSeleccionado" name="producto" required>
+          <option *ngFor="let producto of productos" [ngValue]="producto">{{ producto.nombre }}</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="cantidad" class="form-label">Cantidad</label>
+        <input type="number" id="cantidad" class="form-control" [(ngModel)]="cantidad" name="cantidad" min="1" required />
+      </div>
+      <div class="col-md-3 d-flex align-items-end">
+        <button class="btn btn-primary w-100" [disabled]="!ventaForm.form.valid">Agregar</button>
+      </div>
+    </div>
+  </form>
+
+  <h3>Productos en la venta</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Subtotal</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ventaActual; let i = index">
+        <td>{{ item.producto.nombre }}</td>
+        <td>{{ item.cantidad }}</td>
+        <td>{{ item.producto.precio | currency }}</td>
+        <td>{{ (item.producto.precio * item.cantidad) | currency }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Total: {{ totalVenta | currency }}</h4>
+
+  <button class="btn btn-success" (click)="finalizarVenta()" [disabled]="ventaActual.length === 0">Finalizar Venta</button>
+</div>
+
